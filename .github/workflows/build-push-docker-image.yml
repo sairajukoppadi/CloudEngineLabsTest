@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.DOCKER_ID }}
         password: ${{ secrets.DOCKER_PWD }}
     - name: Build the Docker image
-      run: docker build -t ${{ secrets.DOCKER_ID }}/cloudenginelabs:1.0${{ github.GITHUB_RUN_ID }} .
+      run: docker build -t ${{ secrets.DOCKER_ID }}/cloudenginelabs:1.0${{ github.GITHUB_RUN_NUMBER }} .
 
     - name: Push Docker Image
-      run: docker push ${{ secrets.DOCKER_ID }}/cloudenginelabs:1.0${{ github.GITHUB_RUN_ID }}
+      run: docker push ${{ secrets.DOCKER_ID }}/cloudenginelabs:1.0${{ github.GITHUB_RUN_NUMBER }}
